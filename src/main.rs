@@ -49,4 +49,20 @@ mod tests {
             3.0
         );
     }
+
+    #[test]
+    fn test_longest_palindromic_substring() {
+        assert_eq!(
+            Problem::solve_longest_palindromic_substring_v1(String::from("babdabb")),
+            String::from("bab")
+        );
+        assert_eq!(
+            Problem::solve_longest_palindromic_substring_v1(String::from("sssaassdbccd")),
+            String::from("saas")
+        );
+        assert_eq!(
+            Problem::solve_longest_palindromic_substring_v1(String::from("tattarrattat")),
+            String::from("tattarrattat")
+        );
+    }
 }
