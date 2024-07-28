@@ -58,11 +58,30 @@ mod tests {
         );
         assert_eq!(
             Problem::solve_longest_palindromic_substring_v1(String::from("sssaassdbccd")),
-            String::from("saas")
+            String::from("ssaass")
         );
         assert_eq!(
             Problem::solve_longest_palindromic_substring_v1(String::from("tattarrattat")),
             String::from("tattarrattat")
         );
+    }
+    #[test]
+    fn test_zigzag_convertion() {
+        assert_eq!(
+            Problem::solve_zigzag_convertion_v1(String::from("PAYPALISHIRING"), 3),
+            String::from("PAHNAPLSIIGYIR")
+        );
+        assert_eq!(
+            Problem::solve_zigzag_convertion_v1(String::from("PAYPALISHIRING"), 4),
+            String::from("PINALSIGYAHRPI")
+        );
+    }
+
+    #[test]
+    fn test_reverse_integer() {
+        assert_eq!(Problem::solve_reverse_integer_v1(123), 321);
+        assert_eq!(Problem::solve_reverse_integer_v1(-123), -321);
+        assert_eq!(Problem::solve_reverse_integer_v1(120), 21);
+        assert_eq!(Problem::solve_reverse_integer_v1(1534236469), 0);
     }
 }

@@ -14,9 +14,12 @@ impl Problem {
             let mut right = i;
 
             while right + 1 < v_len && v_chars[right + 1] == v_chars[left] {
+                //expand right if next char same
                 right += 1;
             }
             while right + 1 < v_len && left > 0 && v_chars[right + 1] == v_chars[left - 1] {
+                // handle palindrome expand left and right
+                // if right of right and left of left same
                 right += 1;
                 left -= 1;
             }
