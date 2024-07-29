@@ -5,6 +5,7 @@ pub mod p4_median_of_two_sorted_array;
 pub mod p5_longest_palindromic_substring;
 pub mod p6_zigzag_conversion;
 pub mod p7_reverse_integer;
+pub mod p8_string_to_integer_atoi;
 
 pub use p2_add_two_numbers::*;
 // pub use p1_two_sum::*;

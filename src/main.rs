@@ -84,4 +84,52 @@ mod tests {
         assert_eq!(Problem::solve_reverse_integer_v1(120), 21);
         assert_eq!(Problem::solve_reverse_integer_v1(1534236469), 0);
     }
+
+    #[test]
+    fn test_string_to_integer_atoi_v1() {
+        assert_eq!(
+            Problem::solve_string_to_integer_atoi_v1(String::from("   -042")),
+            -42
+        );
+        assert_eq!(
+            Problem::solve_string_to_integer_atoi_v1(String::from("42")),
+            42
+        );
+        assert_eq!(
+            Problem::solve_string_to_integer_atoi_v1(String::from("1337c0d3")),
+            1337
+        );
+        assert_eq!(
+            Problem::solve_string_to_integer_atoi_v1(String::from("words and 987")),
+            0
+        );
+        assert_eq!(
+            Problem::solve_string_to_integer_atoi_v1(String::from("-91283472332")),
+            -2147483648
+        );
+    }
+
+    #[test]
+    fn test_string_to_integer_atoi_vx() {
+        assert_eq!(
+            Problem::solve_string_to_integer_atoi_vx(String::from("   -042")),
+            -42
+        );
+        assert_eq!(
+            Problem::solve_string_to_integer_atoi_vx(String::from("42")),
+            42
+        );
+        assert_eq!(
+            Problem::solve_string_to_integer_atoi_vx(String::from("1337c0d3")),
+            1337
+        );
+        assert_eq!(
+            Problem::solve_string_to_integer_atoi_vx(String::from("words and 987")),
+            0
+        );
+        assert_eq!(
+            Problem::solve_string_to_integer_atoi_vx(String::from("-91283472332")),
+            -2147483648
+        );
+    }
 }
