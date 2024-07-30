@@ -132,4 +132,10 @@ mod tests {
             -2147483648
         );
     }
+    #[test]
+    fn test_palindrom_number_v1() {
+        assert_eq!(Problem::solve_palindrom_number_v1(122), false);
+        assert_eq!(Problem::solve_palindrom_number_v1(12121), true);
+        assert_eq!(Problem::solve_palindrom_number_v1(-121), false);
+    }
 }
