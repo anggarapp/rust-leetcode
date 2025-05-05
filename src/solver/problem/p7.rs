@@ -1,7 +1,7 @@
-use crate::solver::Problem;
+pub struct P7;
 
-impl Problem {
-    pub fn solve_reverse_integer_v1(num: i32) -> i32 {
+impl P7 {
+    pub fn solve_v1(num: i32) -> i32 {
         let mut revs: i64 = 0;
         let mut int: i64 = if num < 0 { num as i64 * -1 } else { num as i64 };
         while int > 0 {

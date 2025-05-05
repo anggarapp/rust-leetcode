@@ -1,7 +1,7 @@
-use crate::solver::Problem;
+pub struct P3;
 
-impl Problem {
-    pub fn solve_longest_substring_without_repeating_char_v1(string: String) -> i32 {
+impl P3 {
+    pub fn naive_solve(string: String) -> i32 {
         use std::collections::HashSet;
 
         let mut count = 0i32;
@@ -23,7 +23,7 @@ impl Problem {
 
         count
     }
-    pub fn solve_longest_substring_without_repeating_char_vx(string: String) -> i32 {
+    pub fn better_solve(string: String) -> i32 {
         let seq: Vec<char> = string.chars().collect();
         let len = seq.len();
         let (mut start, mut end, mut max) = (0, 0, 0);

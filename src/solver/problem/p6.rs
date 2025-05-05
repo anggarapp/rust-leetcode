@@ -1,7 +1,6 @@
-use crate::solver::Problem;
-
-impl Problem {
-    pub fn solve_zigzag_convertion_v1(s: String, num_rows: i32) -> String {
+pub struct P6;
+impl P6 {
+    pub fn solve(s: String, num_rows: i32) -> String {
         if num_rows < 2 {
             return s;
         }

@@ -1,7 +1,7 @@
-use crate::solver::Problem;
+pub struct P5;
 
-impl Problem {
-    pub fn solve_longest_palindromic_substring_v1(s: String) -> String {
+impl P5 {
+    pub fn solve(s: String) -> String {
         let v_chars: Vec<char> = s.chars().collect();
         let v_len = v_chars.len();
         if v_len == 0 {

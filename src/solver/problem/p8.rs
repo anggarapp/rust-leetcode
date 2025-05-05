@@ -1,9 +1,9 @@
 use std::i32;
 
-use crate::solver::Problem;
+pub struct P8;
 
-impl Problem {
-    pub fn solve_string_to_integer_atoi_v1(s: String) -> i32 {
+impl P8 {
+    pub fn naive_solve(s: String) -> i32 {
         let _trimed_string = s.trim();
         let chars = _trimed_string.chars().nth(0);
         let mut operator = 1;
@@ -41,7 +41,7 @@ impl Problem {
         }
     }
 
-    pub fn solve_string_to_integer_atoi_vx(s: String) -> i32 {
+    pub fn better_solve(s: String) -> i32 {
         let mut result: i64 = 0;
         let trimmed = s.trim();
 

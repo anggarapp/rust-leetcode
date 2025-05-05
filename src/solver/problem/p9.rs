@@ -1,7 +1,6 @@
-use crate::solver::Problem;
-
-impl Problem {
-    pub fn solve_palindrom_number_v1(x: i32) -> bool {
+pub struct P9;
+impl P9 {
+    pub fn solve(x: i32) -> bool {
         if x.is_negative() {
             return false;
         }

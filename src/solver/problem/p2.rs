@@ -1,4 +1,4 @@
-use crate::solver::Problem;
+pub struct P2;
 
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -24,11 +24,8 @@ pub fn to_list(vec: Vec<i32>) -> List {
     current
 }
 
-impl Problem {
-    pub fn solve_add_two_numbers(
-        l1: Option<Box<ListNode>>,
-        l2: Option<Box<ListNode>>,
-    ) -> Option<Box<ListNode>> {
+impl P2 {
+    pub fn solve(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let mut l1 = &l1;
         let mut l2 = &l2;
         let mut carry = 0;

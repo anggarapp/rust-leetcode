@@ -1,7 +1,7 @@
-use crate::solver::Problem;
+pub struct P4;
 
-impl Problem {
-    pub fn solve_median_of_two_sorted_array_v1(nums_1: Vec<i32>, nums_2: Vec<i32>) -> f64 {
+impl P4 {
+    pub fn solve(nums_1: Vec<i32>, nums_2: Vec<i32>) -> f64 {
         let mut merged_nums = vec![];
         merged_nums.extend(nums_1);
         merged_nums.extend(nums_2);
