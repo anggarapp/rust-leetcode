@@ -1,4 +1,4 @@
-use rust_solve_leetcode::solver::{P1, P10, P11, P12, P3, P4, P5, P6, P7, P8, P9};
+use rust_solve_leetcode::solver::*;
 
 #[test]
 fn test_p1_two_sum_v1() {
@@ -106,4 +106,31 @@ fn test_p12_integer_to_roman() {
     assert_eq!(P12::other_v1_solve(3749), "MMMDCCXLIX".to_string());
     assert_eq!(P12::other_v1_solve(58), "LVIII".to_string());
     assert_eq!(P12::other_v1_solve(1994), "MCMXCIV".to_string());
+}
+
+#[test]
+fn test_p13_roman_to_integer() {
+    assert_eq!(P13::v1_solve("III".to_string()), 3);
+    assert_eq!(P13::v1_solve("LVIII".to_string()), 58);
+    assert_eq!(P13::v1_solve("MCMXCIV".to_string()), 1994);
+}
+
+#[test]
+fn test_p14_longest_common_prefix() {
+    assert_eq!(
+        P14::solve_v1(vec![
+            "flower".to_string(),
+            "flow".to_string(),
+            "flight".to_string()
+        ]),
+        "fl".to_string()
+    );
+    assert_eq!(
+        P14::solve_v1(vec![
+            "dog".to_string(),
+            "racecar".to_string(),
+            "car".to_string()
+        ]),
+        "".to_string()
+    );
 }
