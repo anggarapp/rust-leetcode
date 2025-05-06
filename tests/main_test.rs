@@ -134,3 +134,15 @@ fn test_p14_longest_common_prefix() {
         "".to_string()
     );
 }
+
+#[test]
+fn test_p15_three_sum() {
+    assert_eq!(
+        P15::solve_v1(vec![-1, 0, 1, 2, -1, -4]),
+        vec![[-1, -1, 2], [-1, 0, 1]]
+    );
+    assert_eq!(
+        P15::solve_v2(vec![-1, 0, 1, 2, -1, -4]),
+        vec![[-1, -1, 2], [-1, 0, 1]]
+    );
+}
