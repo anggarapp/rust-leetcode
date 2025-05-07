@@ -145,4 +145,17 @@ fn test_p15_three_sum() {
         P15::solve_v2(vec![-1, 0, 1, 2, -1, -4]),
         vec![[-1, -1, 2], [-1, 0, 1]]
     );
+    assert_eq!(P15::solve_v1(vec![0, 1, 1]), vec![] as Vec<Vec<i32>>);
+    assert_eq!(P15::solve_v2(vec![0, 1, 1]), vec![] as Vec<Vec<i32>>);
+
+    assert_eq!(P15::solve_v1(vec![0, 0, 0]), vec![[0, 0, 0]]);
+    assert_eq!(P15::solve_v2(vec![0, 0, 0]), vec![[0, 0, 0]]);
+}
+
+#[test]
+fn test_p16_three_sum_closest() {
+    assert_eq!(P16::solve_v1(vec![-1, 2, 1, -4], 1), 2);
+    assert_eq!(P16::solve_v1(vec![0, 0, 0], 1), 0);
+    assert_eq!(P16::solve_v2(vec![-1, 2, 1, -4], 1), 2);
+    assert_eq!(P16::solve_v2(vec![0, 0, 0], 1), 0);
 }
