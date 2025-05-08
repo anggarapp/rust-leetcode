@@ -183,3 +183,45 @@ fn test_p17_letter_combinations() {
     assert_eq!(P17::solve_v3("2".to_string()), vec!["a", "b", "c"]);
     assert_eq!(P17::solve_v3("".to_string()), vec![] as Vec<String>);
 }
+
+#[test]
+fn test_p18_four_sum() {
+    assert_eq!(
+        P18::solve_v1(vec![1, 0, -1, 0, -2, 2], 0),
+        vec![[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]]
+    );
+    assert_eq!(P18::solve_v1(vec![2, 2, 2, 2, 2], 8), vec![[2, 2, 2, 2]]);
+    assert_eq!(
+        P18::solve_v1(
+            vec![1000000000, 1000000000, 1000000000, 1000000000],
+            -294967296
+        ),
+        vec![] as Vec<Vec<i32>>
+    );
+
+    assert_eq!(
+        P18::solve_v2(vec![1, 0, -1, 0, -2, 2], 0),
+        vec![[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]]
+    );
+    assert_eq!(P18::solve_v2(vec![2, 2, 2, 2, 2], 8), vec![[2, 2, 2, 2]]);
+    assert_eq!(
+        P18::solve_v2(
+            vec![1000000000, 1000000000, 1000000000, 1000000000],
+            -294967296
+        ),
+        vec![] as Vec<Vec<i32>>
+    );
+
+    assert_eq!(
+        P18::solve_v3(vec![1, 0, -1, 0, -2, 2], 0),
+        vec![[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]]
+    );
+    assert_eq!(P18::solve_v3(vec![2, 2, 2, 2, 2], 8), vec![[2, 2, 2, 2]]);
+    assert_eq!(
+        P18::solve_v3(
+            vec![1000000000, 1000000000, 1000000000, 1000000000],
+            -294967296
+        ),
+        vec![] as Vec<Vec<i32>>
+    );
+}
