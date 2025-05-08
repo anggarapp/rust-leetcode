@@ -159,3 +159,27 @@ fn test_p16_three_sum_closest() {
     assert_eq!(P16::solve_v2(vec![-1, 2, 1, -4], 1), 2);
     assert_eq!(P16::solve_v2(vec![0, 0, 0], 1), 0);
 }
+
+#[test]
+fn test_p17_letter_combinations() {
+    assert_eq!(
+        P17::solve_v1("23".to_string()),
+        vec!["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+    );
+    assert_eq!(P17::solve_v1("2".to_string()), vec!["a", "b", "c"]);
+    assert_eq!(P17::solve_v1("".to_string()), vec![] as Vec<String>);
+
+    assert_eq!(
+        P17::solve_v2("23".to_string()),
+        vec!["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+    );
+    assert_eq!(P17::solve_v2("2".to_string()), vec!["a", "b", "c"]);
+    assert_eq!(P17::solve_v2("".to_string()), vec![] as Vec<String>);
+
+    assert_eq!(
+        P17::solve_v3("23".to_string()),
+        vec!["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+    );
+    assert_eq!(P17::solve_v3("2".to_string()), vec!["a", "b", "c"]);
+    assert_eq!(P17::solve_v3("".to_string()), vec![] as Vec<String>);
+}
