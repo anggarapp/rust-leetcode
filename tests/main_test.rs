@@ -389,3 +389,21 @@ fn test_p19_remove_nth_from_end() {
 
     assert_eq!(P19::solve_v1(node_input, 1), node_output);
 }
+
+#[test]
+fn test_p20_valid_parentheses() {
+    assert_eq!(P20::solve_v1("()".to_string()), true);
+    assert_eq!(P20::solve_v1("()[]{}".to_string()), true);
+    assert_eq!(P20::solve_v1("(]".to_string()), false);
+    assert_eq!(P20::solve_v1("([])".to_string()), true);
+
+    assert_eq!(P20::solve_v2("()".to_string()), true);
+    assert_eq!(P20::solve_v2("()[]{}".to_string()), true);
+    assert_eq!(P20::solve_v2("(]".to_string()), false);
+    assert_eq!(P20::solve_v2("([])".to_string()), true);
+
+    assert_eq!(P20::solve_v3("()".to_string()), true);
+    assert_eq!(P20::solve_v3("()[]{}".to_string()), true);
+    assert_eq!(P20::solve_v3("(]".to_string()), false);
+    assert_eq!(P20::solve_v3("([])".to_string()), true);
+}
