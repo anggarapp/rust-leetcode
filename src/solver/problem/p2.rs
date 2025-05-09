@@ -1,16 +1,5 @@
+use crate::solver::ListNode;
 pub struct P2;
-
-#[derive(PartialEq, Eq, Clone, Debug)]
-pub struct ListNode {
-    pub val: i32,
-    pub next: Option<Box<ListNode>>,
-}
-
-impl ListNode {
-    fn new(val: i32) -> Self {
-        ListNode { next: None, val }
-    }
-}
 
 type List = Option<Box<ListNode>>;
 
@@ -47,7 +36,7 @@ impl P2 {
             *cur = Some(Box::new(ListNode::new(sum % 10)));
             cur = &mut cur.as_mut().unwrap().next;
         }
-        println!("{:?}", result);
+        // println!("{:?}", result);
         result
     }
 }

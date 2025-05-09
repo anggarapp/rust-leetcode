@@ -11,6 +11,117 @@ fn test_p1_two_sum_vx() {
 }
 
 #[test]
+fn test_p2_add_two_number() {
+    let node_one = Some(Box::new(ListNode { val: 3, next: None }));
+    let node_one = Some(Box::new(ListNode {
+        val: 4,
+        next: node_one,
+    }));
+    let node_one = Some(Box::new(ListNode {
+        val: 2,
+        next: node_one,
+    }));
+    let node_two = Some(Box::new(ListNode { val: 4, next: None }));
+    let node_two = Some(Box::new(ListNode {
+        val: 6,
+        next: node_two,
+    }));
+    let node_two = Some(Box::new(ListNode {
+        val: 5,
+        next: node_two,
+    }));
+
+    let res_node = Some(Box::new(ListNode { val: 8, next: None }));
+    let res_node = Some(Box::new(ListNode {
+        val: 0,
+        next: res_node,
+    }));
+    let res_node = Some(Box::new(ListNode {
+        val: 7,
+        next: res_node,
+    }));
+    assert_eq!(P2::solve(node_one, node_two), res_node);
+
+    let node_one = Some(Box::new(ListNode { val: 0, next: None }));
+    let node_two = Some(Box::new(ListNode { val: 0, next: None }));
+    let res_node = Some(Box::new(ListNode { val: 0, next: None }));
+
+    assert_eq!(P2::solve(node_one, node_two), res_node);
+
+    let node_one = Some(Box::new(ListNode { val: 9, next: None }));
+    let node_one = Some(Box::new(ListNode {
+        val: 9,
+        next: node_one,
+    }));
+    let node_one = Some(Box::new(ListNode {
+        val: 9,
+        next: node_one,
+    }));
+    let node_one = Some(Box::new(ListNode {
+        val: 9,
+        next: node_one,
+    }));
+    let node_one = Some(Box::new(ListNode {
+        val: 9,
+        next: node_one,
+    }));
+    let node_one = Some(Box::new(ListNode {
+        val: 9,
+        next: node_one,
+    }));
+    let node_one = Some(Box::new(ListNode {
+        val: 9,
+        next: node_one,
+    }));
+
+    let node_two = Some(Box::new(ListNode { val: 9, next: None }));
+    let node_two = Some(Box::new(ListNode {
+        val: 9,
+        next: node_two,
+    }));
+    let node_two = Some(Box::new(ListNode {
+        val: 9,
+        next: node_two,
+    }));
+    let node_two = Some(Box::new(ListNode {
+        val: 9,
+        next: node_two,
+    }));
+
+    let res_node = Some(Box::new(ListNode { val: 1, next: None }));
+    let res_node = Some(Box::new(ListNode {
+        val: 0,
+        next: res_node,
+    }));
+    let res_node = Some(Box::new(ListNode {
+        val: 0,
+        next: res_node,
+    }));
+    let res_node = Some(Box::new(ListNode {
+        val: 0,
+        next: res_node,
+    }));
+    let res_node = Some(Box::new(ListNode {
+        val: 9,
+        next: res_node,
+    }));
+    let res_node = Some(Box::new(ListNode {
+        val: 9,
+        next: res_node,
+    }));
+    let res_node = Some(Box::new(ListNode {
+        val: 9,
+        next: res_node,
+    }));
+    let res_node = Some(Box::new(ListNode {
+        val: 8,
+        next: res_node,
+    }));
+
+    assert_eq!(P2::solve(node_one, node_two), res_node);
+}
+
+#[test]
 fn test_p3_longest_substring_without_repeating_char_v1() {
     assert_eq!(P3::naive_solve(String::from("abcaabbca")), 3);
 }
@@ -224,4 +335,57 @@ fn test_p18_four_sum() {
         ),
         vec![] as Vec<Vec<i32>>
     );
+}
+
+#[test]
+fn test_p19_remove_nth_from_end() {
+    let node_input = Some(Box::new(ListNode { val: 5, next: None }));
+    let node_input = Some(Box::new(ListNode {
+        val: 4,
+        next: node_input,
+    }));
+    let node_input = Some(Box::new(ListNode {
+        val: 3,
+        next: node_input,
+    }));
+    let node_input = Some(Box::new(ListNode {
+        val: 2,
+        next: node_input,
+    }));
+    let node_input = Some(Box::new(ListNode {
+        val: 1,
+        next: node_input,
+    }));
+
+    //
+    let node_output = Some(Box::new(ListNode { val: 5, next: None }));
+    let node_output = Some(Box::new(ListNode {
+        val: 3,
+        next: node_output,
+    }));
+    let node_output = Some(Box::new(ListNode {
+        val: 2,
+        next: node_output,
+    }));
+    let node_output = Some(Box::new(ListNode {
+        val: 1,
+        next: node_output,
+    }));
+
+    assert_eq!(P19::solve_v1(node_input, 2), node_output);
+
+    let node_input = Some(Box::new(ListNode { val: 2, next: None }));
+    let node_input = Some(Box::new(ListNode {
+        val: 1,
+        next: node_input,
+    }));
+    let node_output = Some(Box::new(ListNode { val: 1, next: None }));
+
+    assert_eq!(P19::solve_v1(node_input, 1), node_output);
+
+    let node_input = Some(Box::new(ListNode { val: 1, next: None }));
+
+    let node_output = None;
+
+    assert_eq!(P19::solve_v1(node_input, 1), node_output);
 }
