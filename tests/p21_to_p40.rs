@@ -88,3 +88,12 @@ fn test_p21_merge_two_lists() {
     }));
     assert_eq!(P21::solve_v2(node_one, node_two), node_result);
 }
+
+#[test]
+fn test_p22_generate_parenthesis() {
+    assert_eq!(
+        P22::solve_v1(3),
+        vec!["((()))", "(()())", "(())()", "()(())", "()()()"]
+    );
+    assert_eq!(P22::solve_v1(1), vec!["()"]);
+}
