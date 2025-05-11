@@ -160,3 +160,35 @@ fn test_p23_merge_k_lists() {
         node_result
     );
 }
+
+#[test]
+fn test_p24_swap_pairs() {
+    let node_one = Some(Box::new(ListNode { val: 4, next: None }));
+    let node_one = Some(Box::new(ListNode {
+        val: 3,
+        next: node_one,
+    }));
+    let node_one = Some(Box::new(ListNode {
+        val: 2,
+        next: node_one,
+    }));
+    let node_one = Some(Box::new(ListNode {
+        val: 1,
+        next: node_one,
+    }));
+
+    let node_res = Some(Box::new(ListNode { val: 3, next: None }));
+    let node_res = Some(Box::new(ListNode {
+        val: 4,
+        next: node_res,
+    }));
+    let node_res = Some(Box::new(ListNode {
+        val: 1,
+        next: node_res,
+    }));
+    let node_res = Some(Box::new(ListNode {
+        val: 2,
+        next: node_res,
+    }));
+    assert_eq!(P24::solve_v1(node_one), node_res);
+}
