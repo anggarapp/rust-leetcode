@@ -192,3 +192,44 @@ fn test_p24_swap_pairs() {
     }));
     assert_eq!(P24::solve_v1(node_one), node_res);
 }
+
+#[test]
+fn test_p25_reverse_k_group() {
+    let node_one = Some(Box::new(ListNode { val: 5, next: None }));
+    let node_one = Some(Box::new(ListNode {
+        val: 4,
+        next: node_one,
+    }));
+    let node_one = Some(Box::new(ListNode {
+        val: 3,
+        next: node_one,
+    }));
+    let node_one = Some(Box::new(ListNode {
+        val: 2,
+        next: node_one,
+    }));
+    let node_one = Some(Box::new(ListNode {
+        val: 1,
+        next: node_one,
+    }));
+
+    let node_res = Some(Box::new(ListNode { val: 5, next: None }));
+    let node_res = Some(Box::new(ListNode {
+        val: 4,
+        next: node_res,
+    }));
+    let node_res = Some(Box::new(ListNode {
+        val: 1,
+        next: node_res,
+    }));
+    let node_res = Some(Box::new(ListNode {
+        val: 2,
+        next: node_res,
+    }));
+    let node_res = Some(Box::new(ListNode {
+        val: 3,
+        next: node_res,
+    }));
+
+    assert_eq!(P25::solve_v1(node_one, 3), node_res);
+}
