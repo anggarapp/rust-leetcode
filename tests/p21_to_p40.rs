@@ -257,3 +257,37 @@ fn test_p26_remove_duplicates() {
     let mut vec_two = Vec::from([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]);
     assert!(test(&mut vec_two, vec![0, 1, 2, 3, 4], P26::solve_v1));
 }
+
+#[test]
+fn test_p27_remove_element() {
+    fn test(
+        input_array: &mut Vec<i32>,
+        expected_array: Vec<i32>,
+        val_ex: i32,
+        fnc: fn(&mut Vec<i32>, i32) -> i32,
+    ) -> bool {
+        let k = fnc(input_array, val_ex);
+        if k != expected_array.len() as i32 {
+            return false;
+        }
+        let piece = input_array.clone();
+        let mut piece = piece[0..k as usize].to_vec();
+        piece.sort();
+
+        for i in 0..k {
+            if expected_array[i as usize] != piece[i as usize] {
+                return false;
+            }
+        }
+        true
+    }
+
+    let mut vec_one = Vec::from([3, 2, 2, 3]);
+    assert!(test(&mut vec_one, vec![2, 2], 3, P27::solve_v1));
+
+    let mut vec_two = Vec::from([0, 1, 2, 2, 3, 0, 4, 2]);
+    assert_eq!(
+        test(&mut vec_two, vec![0, 0, 1, 3, 4], 2, P27::solve_v1),
+        true
+    );
+}
