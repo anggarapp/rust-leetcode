@@ -233,3 +233,27 @@ fn test_p25_reverse_k_group() {
 
     assert_eq!(P25::solve_v1(node_one, 3), node_res);
 }
+
+#[test]
+fn test_p26_remove_duplicates() {
+    fn test(
+        input_array: &mut Vec<i32>,
+        expected_array: Vec<i32>,
+        fnc: fn(&mut Vec<i32>) -> i32,
+    ) -> bool {
+        let k = fnc(input_array);
+        if k != expected_array.len() as i32 {
+            return false;
+        }
+        for i in 0..k {
+            if input_array[i as usize] != expected_array[i as usize] {
+                return false;
+            }
+        }
+        true
+    }
+    let mut vec_one = Vec::from([1, 1, 2]);
+    assert!(test(&mut vec_one, vec![1, 2], P26::solve_v1));
+    let mut vec_two = Vec::from([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]);
+    assert!(test(&mut vec_two, vec![0, 1, 2, 3, 4], P26::solve_v1));
+}
