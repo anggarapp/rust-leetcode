@@ -291,3 +291,28 @@ fn test_p27_remove_element() {
         true
     );
 }
+
+#[test]
+fn test_p28_str_str() {
+    assert_eq!(P28::solve_v2("sadbutsad".to_string(), "sad".to_string()), 0);
+    assert_eq!(
+        P28::solve_v2("leetcode".to_string(), "leeto".to_string()),
+        -1
+    );
+    assert_eq!(
+        P28::solve_v2("mississippi".to_string(), "issip".to_string()),
+        4
+    );
+    assert_eq!(
+        P28::solve_v2("abc".to_string(), "c".to_string()),
+        2
+    );
+    assert_eq!(
+        P28::solve_v2("abc".to_string(), "c".to_string()),
+        2
+    );
+    assert_eq!(
+        P28::solve_v2("abb".to_string(), "abaaa".to_string()),
+        -1
+    );
+}
