@@ -303,16 +303,13 @@ fn test_p28_str_str() {
         P28::solve_v2("mississippi".to_string(), "issip".to_string()),
         4
     );
-    assert_eq!(
-        P28::solve_v2("abc".to_string(), "c".to_string()),
-        2
-    );
-    assert_eq!(
-        P28::solve_v2("abc".to_string(), "c".to_string()),
-        2
-    );
-    assert_eq!(
-        P28::solve_v2("abb".to_string(), "abaaa".to_string()),
-        -1
-    );
+    assert_eq!(P28::solve_v2("abc".to_string(), "c".to_string()), 2);
+    assert_eq!(P28::solve_v2("abc".to_string(), "c".to_string()), 2);
+    assert_eq!(P28::solve_v2("abb".to_string(), "abaaa".to_string()), -1);
+}
+
+#[test]
+fn test_p29_divide() {
+    assert_eq!(P29::solve_v1(10, 3), 3);
+    assert_eq!(P29::solve_v1(7, -3), -2);
 }
