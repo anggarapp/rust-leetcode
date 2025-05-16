@@ -313,3 +313,32 @@ fn test_p29_divide() {
     assert_eq!(P29::solve_v1(10, 3), 3);
     assert_eq!(P29::solve_v1(7, -3), -2);
 }
+#[test]
+fn test_p30_find_substring() {
+    assert_eq!(
+        P30::solve_v1(
+            "barfoothefoobarman".to_string(),
+            vec!["foo".to_string(), "bar".to_string()]
+        ),
+        vec![0, 9]
+    );
+    assert_eq!(
+        P30::solve_v1(
+            "wordgoodgoodgoodbestword".to_string(),
+            vec![
+                "word".to_string(),
+                "good".to_string(),
+                "best".to_string(),
+                "word".to_string()
+            ]
+        ),
+        vec![]
+    );
+    assert_eq!(
+        P30::solve_v1(
+            "barfoofoobarthefoobarman".to_string(),
+            vec!["foo".to_string(), "bar".to_string(), "the".to_string()]
+        ),
+        vec![6, 9, 12]
+    );
+}
