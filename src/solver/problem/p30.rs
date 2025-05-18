@@ -1,7 +1,7 @@
 pub struct P30;
 
 impl P30 {
-    pub fn solve_vx(s: String, words: Vec<String>)->Vec<i32> {
+    pub fn solve_vx(_s: String, _words: Vec<String>)->Vec<i32> {
         // store all posibilities of word combination in vectors
         // do haystack algorithm to every combination with s and append the results seperate vectors
         vec![0,0]

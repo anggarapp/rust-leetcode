@@ -342,3 +342,19 @@ fn test_p30_find_substring() {
         vec![6, 9, 12]
     );
 }
+
+#[test]
+fn test_p31_next_permutation() {
+    let mut vec_one = vec![1,2,3];
+    P31::solve_v1(&mut vec_one);
+    assert_eq!(vec_one, vec![1,3,2]);
+    
+    let mut vec_two = vec![3,2,1];
+    P31::solve_v1(&mut vec_two);
+    assert_eq!(vec_two, vec![1,2,3]);
+    
+    let mut vec_three = vec![1,1,5];
+    P31::solve_v1(&mut vec_three);
+    assert_eq!(vec_three, vec![1,5,1]);
+
+}
