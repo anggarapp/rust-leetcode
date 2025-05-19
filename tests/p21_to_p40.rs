@@ -345,16 +345,29 @@ fn test_p30_find_substring() {
 
 #[test]
 fn test_p31_next_permutation() {
-    let mut vec_one = vec![1,2,3];
+    let mut vec_one = vec![1, 2, 3];
     P31::solve_v1(&mut vec_one);
-    assert_eq!(vec_one, vec![1,3,2]);
-    
-    let mut vec_two = vec![3,2,1];
-    P31::solve_v1(&mut vec_two);
-    assert_eq!(vec_two, vec![1,2,3]);
-    
-    let mut vec_three = vec![1,1,5];
-    P31::solve_v1(&mut vec_three);
-    assert_eq!(vec_three, vec![1,5,1]);
+    assert_eq!(vec_one, vec![1, 3, 2]);
 
+    let mut vec_two = vec![3, 2, 1];
+    P31::solve_v1(&mut vec_two);
+    assert_eq!(vec_two, vec![1, 2, 3]);
+
+    let mut vec_three = vec![1, 1, 5];
+    P31::solve_v1(&mut vec_three);
+    assert_eq!(vec_three, vec![1, 5, 1]);
+}
+
+#[test]
+fn test_p32_longest_valid_parentheses() {
+    assert_eq!(P32::solve_v3("(()".to_string()), 2);
+    assert_eq!(P32::solve_v3(")()())".to_string()), 4);
+    assert_eq!(P32::solve_v3("".to_string()), 0);
+}
+
+#[test]
+fn test_p33_search(){
+    assert_eq!(P33::solve_v2(vec![4,5,6,7,0,1,2], 0), 4);
+    assert_eq!(P33::solve_v2(vec![4,5,6,7,0,1,2], 3), -1);
+    assert_eq!(P33::solve_v2(vec![1], 0), -1);
 }
