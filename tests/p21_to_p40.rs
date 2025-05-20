@@ -371,3 +371,10 @@ fn test_p33_search(){
     assert_eq!(P33::solve_v2(vec![4,5,6,7,0,1,2], 3), -1);
     assert_eq!(P33::solve_v2(vec![1], 0), -1);
 }
+
+#[test]
+fn test_p34_search_range(){
+    assert_eq!(P34::solve_v2(vec![5,7,7,8,8,10], 8), vec![3,4]);
+    assert_eq!(P34::solve_v2(vec![5,7,7,8,8,10], 6), vec![-1,-1]);
+    assert_eq!(P34::solve_v2(vec![], 0), [-1,-1]);
+}
