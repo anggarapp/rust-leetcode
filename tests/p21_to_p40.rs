@@ -386,7 +386,7 @@ fn test_p35_search_insert() {
 }
 
 #[test]
-fn test_is_valid_sudoku() {
+fn test_p36_is_valid_sudoku() {
     assert_eq!(
         P36::solve_v1(vec![
             vec!['5', '3', '.', '.', '7', '.', '.', '.', '.'],
@@ -433,7 +433,7 @@ fn test_is_valid_sudoku() {
 
 #[test]
 
-fn test_solve_sudoku() {
+fn test_p37_solve_sudoku() {
     let mut board_one_start = vec![
         vec!['5', '3', '.', '.', '7', '.', '.', '.', '.'],
         vec!['6', '.', '.', '1', '9', '5', '.', '.', '.'],
@@ -458,4 +458,10 @@ fn test_solve_sudoku() {
     ];
     P37::solve_v3(&mut board_one_start);
     assert_eq!(board_one_start, board_one_end);
+}
+
+#[test]
+fn test_p38_solve_sudoku() {
+    assert_eq!(P38::solve_v1(1),"1".to_string());
+    assert_eq!(P38::solve_v1(4),"1211".to_string());
 }
