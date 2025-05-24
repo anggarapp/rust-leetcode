@@ -477,13 +477,18 @@ fn test_p39_combination_sum() {
         vec![vec![2, 2, 2, 2], vec![2, 3, 3], vec![3, 5]]
     );
 
-    assert_eq!(
-        P39::solve_v1(vec![2], 1),
-        vec![] as Vec<Vec<i32>>
-    );
+    assert_eq!(P39::solve_v1(vec![2], 1), vec![] as Vec<Vec<i32>>);
 
     assert_eq!(
-        P39::solve_v1(vec![8,7,4,3], 11),
-        vec![vec![3,4,4],vec![3,8],vec![4,7]]
+        P39::solve_v1(vec![8, 7, 4, 3], 11),
+        vec![vec![3, 4, 4], vec![3, 8], vec![4, 7]]
+    );
+}
+
+#[test]
+fn test_p40_combination_sum_distinct() {
+    assert_eq!(
+        P40::solve_v1(vec![10, 1, 2, 7, 6, 1, 5], 8),
+        vec![vec![1, 1, 6], vec![1, 2, 5], vec![1, 7], vec![2, 6]]
     );
 }
