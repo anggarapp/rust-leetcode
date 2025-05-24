@@ -6,8 +6,14 @@ impl P39 {
         candidates.sort();
         let mut t: Vec<i32> = vec![];
         let mut results: Vec<Vec<i32>> = vec![];
-        fn dfs(candidates: &mut Vec<i32>, i: i32, s: i32, t: &mut Vec<i32>, results: &mut Vec<Vec<i32>>) {
-            if s == 0{
+        fn dfs(
+            candidates: &mut Vec<i32>,
+            i: i32,
+            s: i32,
+            t: &mut Vec<i32>,
+            results: &mut Vec<Vec<i32>>,
+        ) {
+            if s == 0 {
                 results.push(t.clone());
                 return;
             }
@@ -19,9 +25,9 @@ impl P39 {
                 dfs(candidates, j as i32, s - candidates[j], t, results);
                 t.pop();
             }
-        }    
+        }
         dfs(&mut candidates, 0, target, &mut t, &mut results);
-        
+
         // results.sort_by(|a, b| b.cmp(a));
         results
     }
@@ -47,5 +53,41 @@ impl P39 {
         Self::dfs(0, target, &candidates, &mut vec![], &mut ans);
         ans
     }
-    
+
+    fn generate(
+        cur: &mut Vec<i32>,
+        start: usize,
+        sum: i32,
+        target: i32,
+        candidates: &Vec<i32>,
+        ans: &mut Vec<Vec<i32>>,
+    ) {
+        if sum > target {
+            return;
+        }
+
+        if sum == target {
+            ans.push(cur.clone());
+            return;
+        }
+
+        for i in start..candidates.len() {
+            cur.push(candidates[i]);
+
+            Self::generate(cur, i, sum + candidates[i], target, candidates, ans);
+
+            cur.pop();
+        }
+    }
+
+    pub fn solve_v3(candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
+        let mut results = vec![];
+        let mut cur = vec![];
+
+        Self::generate(&mut cur, 0, 0, target, &candidates, &mut results);
+
+        results
+    }
+
+
 }
