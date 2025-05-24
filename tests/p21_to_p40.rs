@@ -461,7 +461,29 @@ fn test_p37_solve_sudoku() {
 }
 
 #[test]
-fn test_p38_solve_sudoku() {
-    assert_eq!(P38::solve_v1(1),"1".to_string());
-    assert_eq!(P38::solve_v1(4),"1211".to_string());
+fn test_p38_count_and_say() {
+    assert_eq!(P38::solve_v1(1), "1".to_string());
+    assert_eq!(P38::solve_v1(4), "1211".to_string());
+}
+
+#[test]
+fn test_p39_combination_sum() {
+    assert_eq!(
+        P39::solve_v1(vec![2, 3, 6, 7], 7),
+        vec![vec![2, 2, 3], vec![7]]
+    );
+    assert_eq!(
+        P39::solve_v1(vec![2, 3, 5], 8),
+        vec![vec![2, 2, 2, 2], vec![2, 3, 3], vec![3, 5]]
+    );
+
+    assert_eq!(
+        P39::solve_v1(vec![2], 1),
+        vec![] as Vec<Vec<i32>>
+    );
+
+    assert_eq!(
+        P39::solve_v1(vec![8,7,4,3], 11),
+        vec![vec![3,4,4],vec![3,8],vec![4,7]]
+    );
 }
