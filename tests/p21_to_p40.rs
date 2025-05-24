@@ -492,3 +492,10 @@ fn test_p40_combination_sum_distinct() {
         vec![vec![1, 1, 6], vec![1, 2, 5], vec![1, 7], vec![2, 6]]
     );
 }
+
+#[test]
+fn test_p41_first_missing_positive() {
+    assert_eq!(P41::solve_v2(vec![1,2,0]), 3);
+    assert_eq!(P41::solve_v2(vec![3,4,-1,1]), 2);
+    assert_eq!(P41::solve_v2(vec![7,8,9,11,12]), 1);
+}
