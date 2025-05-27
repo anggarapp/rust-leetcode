@@ -499,3 +499,10 @@ fn test_p41_first_missing_positive() {
     assert_eq!(P41::solve_v2(vec![3,4,-1,1]), 2);
     assert_eq!(P41::solve_v2(vec![7,8,9,11,12]), 1);
 }
+
+#[test]
+fn test_p42_trap() {
+    assert_eq!(P42::solve_v1(vec![0,1,0,2,1,0,1,3,2,1,2,1]), 6);
+    assert_eq!(P42::solve_v1(vec![4,2,0,3,2,5]), 9);
+
+}
