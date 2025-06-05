@@ -504,5 +504,11 @@ fn test_p41_first_missing_positive() {
 fn test_p42_trap() {
     assert_eq!(P42::solve_v1(vec![0,1,0,2,1,0,1,3,2,1,2,1]), 6);
     assert_eq!(P42::solve_v1(vec![4,2,0,3,2,5]), 9);
+    
+}
 
+#[test]
+fn test_p43_multiply_string() {
+    assert_eq!(P43::solve_v1("2".to_string(), "3".to_string()), "6".to_string());
+    assert_eq!(P43::solve_v1("123".to_string(), "456".to_string()), "56088".to_string());
 }
